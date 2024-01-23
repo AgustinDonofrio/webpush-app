@@ -1,4 +1,4 @@
-const PUBLIC_VAPID_KEY='BHUavaCf9u2JdKTM04hpoKN-fOQNP5e4FVdRHf4ZIqjQrM0FSdNeRU7hkSOoBcsPOr3yArIDDnI8SQZmQ-xYTBE'
+const PUBLIC_VAPID_KEY='BD8LABMXDJOjLE-q8AIayvHZy8ZnDOwx3cwXQTBPW06nH6WeXZf9Sf4tjiet0snV5Xg8gSYgkQTTQlyyfXcMus0'
 
 function urlBase64ToUnit8Array(base64String){
     const padding = '='.repeat((4 - base64String.length % 4) % 4)
@@ -31,11 +31,28 @@ const subscription = async () => {
     await fetch('/subscription', { // Tambien podría usar Axios u otra biblioteca
         method: 'POST',
         body: JSON.stringify(subscription),
-        header: {
+        headers: {
             "Content-Type": "application/json"
         }
-    })
+    });
     console.log('Subscribed!')
 }
 
-subscription()
+const form = document.querySelector('#myform',);
+const message = document.querySelector('#message');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch('/new-message', {
+        method: 'POST',
+        body: JSON.stringify({
+            message: message.value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    form.reset();
+})
+
+subscription();

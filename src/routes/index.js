@@ -6,12 +6,17 @@ let pushSubscription
 
 // Subscriptions
 router.post('/subscription', async (req, res) => {
-    pushSubscription = req.body
-    res.status(200).json()
+    pushSubscription = req.body;
+    res.status(200).json();
+
+})
+
+router.post('/new-message', async (req, res) => {
+    const { message } = req.body
 
     const payload = JSON.stringify({
         title: 'My custom notification',
-        message: 'Hello croto'
+        message: message
     })
 
     try {
@@ -22,6 +27,5 @@ router.post('/subscription', async (req, res) => {
 })
 
 // Send notifications
-
 
 module.exports = router
