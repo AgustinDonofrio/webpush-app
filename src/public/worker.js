@@ -5,6 +5,6 @@ self.addEventListener('push', e => {
     console.log(data)
     self.registration.showNotification(data.title, {
         body: data.message,
-        icon:'https://logos-world.net/wp-content/uploads/2020/06/Assassins-Creed-Logo.png'
+        icon:'https://images.emojiterra.com/google/android-11/512px/1f916.png'
     })
 })
