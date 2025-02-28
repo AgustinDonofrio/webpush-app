@@ -25,8 +25,8 @@ Este proyecto utiliza Node.js para implementar notificaciones push web con los m
    ```
 3. Agrega las siguientes variables con tus propias claves VAPID:
    ```
-   VAPID_PUBLIC_KEY=tu_public_key
-   VAPID_PRIVATE_KEY=tu_private_key
+   PUBLIC_VAPID_KEY=tu_public_key
+   PRIVATE_VAPID_KEY=tu_private_key
    ```
 
 # Web Push Notifications Project [🇺🇸]
@@ -55,6 +55,6 @@ This proyect uses Node.js to implement web-push notifications whit the Express, 
    ```
 3. Add the followings variables whit your own VAPID keys:
    ```
-   VAPID_PUBLIC_KEY=your_public_key
-   VAPID_PRIVATE_KEY=your_private_key
+   PUBLIC_VAPID_KEY=your_public_key
+   PRIVATE_VAPID_KEY=your_private_key
    ```
